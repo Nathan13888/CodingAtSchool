@@ -32,12 +32,12 @@ public class Apr16calcDist {
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
-		Apr16calcDist inst = new Apr16calcDist();
+	public static int i = 1;
+	public static Apr16calcDist inst = new Apr16calcDist();
 
+	public static void main(String[] args) throws Exception {
 		// Test Cases
 		Case[] cases = { new Case(0.0, 0.0, 0.0, 4.0), new Case(0.0, 0.0, 0.0, 4.0), new Case(0.0, 1.0, 1.0, 0.0) };
-		int i = 1;
 		for (Case c : cases) {
 			System.out.println("[" + i + "] " + c.toString());
 			BigDecimal res = inst.calcDist(c.x1, c.x2, c.y1, c.y2);
@@ -45,17 +45,19 @@ public class Apr16calcDist {
 			System.out.println(round(res, 5));
 			i++;
 		}
-		inst.testPrompt();
+		testPrompt();
 	}
 
-	public void testPrompt() throws IOException {
+	// *** SETIINGS ***
+	public static final int ACCURACY = 5;
+	public static final String prefix = ">>  ";
+
+	public static void testPrompt() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("Instructions\nEnter \"exit\" to end testPrompt()");
 
 		System.out.println("To input a test case, write four space-separated numbers in this order --> x1, y1, x2, y2");
-
-		String prefix = ">>  ";
 
 		String line = null;
 		while (true) {
@@ -65,7 +67,13 @@ public class Apr16calcDist {
 				break;
 			String[] args = line.split(" ");
 			if (!line.contains("123456789 ") && args.length == 4) {
-
+				Case c = new Case(Double.valueOf(args[0]), Double.valueOf(args[1]), Double.valueOf(args[2]),
+						Double.valueOf(args[3]));
+				System.out.println("[" + i + "] " + c.toString());
+				BigDecimal res = inst.calcDist(c.x1, c.x2, c.y1, c.y2);
+				// res.toPlainString() prints the whole BigDecimal number
+				System.out.println(round(res, ACCURACY));
+				i++;
 			} else
 				System.out.println("Bad Input");
 		}
