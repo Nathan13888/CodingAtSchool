@@ -22,4 +22,4 @@ Much easier than Java, just compile it however you like with GCC (personal choic
 - <https://repl.it/join/hbsngjfo-nathan13888>
 *April 28th - calcIncomeTax*
 
-- <<https://github.com/Nathan13888/CodingAtSchool/blob/master/src/ics2/Apr28calcIncomeTax.cp>
+- <https://github.com/Nathan13888/CodingAtSchool/blob/master/src/ics2/Apr28calcIncomeTax.cp>
