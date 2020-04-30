@@ -1,4 +1,4 @@
-# CodingAtSchool
+# Coding At School
 
 Welcome to my repo with all the code written for school. Larger projecst will msot likely be in a separate repo but small assignments or programs will be here. Just hope that the repo won't become very messy after a while...
 
