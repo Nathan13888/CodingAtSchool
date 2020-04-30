@@ -1,6 +1,7 @@
 ### CPP ###
 
 # Exclude no file extension files, the .exes that was compiled with GCC for testing
+!/**/
 !*.*
 
 # Prerequisites
